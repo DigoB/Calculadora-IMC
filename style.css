@@ -12,12 +12,14 @@
     --text-input: #212529;
     
     --text-placeholder: #495057;
+    --text-error: white;
 
     --backgound-color: #040924;
     --backgound-button-color: #02799D;
     --background-button-hover: #10495a;
     --background-input-color: #DCE2E9;
     --background-section-color: white;
+    --background-error: #F03E3E;
 }
 
 body {
@@ -140,6 +142,11 @@ form button:hover {
     visibility: hidden;
 }
 
+.modal-wrapper.open {
+    opacity: 1;
+    visibility: visible;
+}
+
 .modal-wrapper h2 {
     background: white;
     width: 36rem;
@@ -170,4 +177,31 @@ form button:hover {
 
 .modal button:hover {
     transform: scale(1.1);
+}
+
+/* Alert error */
+.alert-error {
+    background-color: var(--background-error);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: var(--text-error);
+
+    padding: .8rem 0;
+    font-weight: bold;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transform: translateY(-30px);
+    transition: transform .5s;
+}
+
+.alert-error.open {
+    visibility: visible;
+    opacity: 1;
+
+    transform: translateY(0);
 }
