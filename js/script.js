@@ -27,6 +27,9 @@ form.onsubmit = (event) => {
    
 }
 
+inputWeight.oninput = () => AlertError.close()
+inputHeight.oninput = () => AlertError.close()
+
 function displayResultMessage(result) {
     const message = `Seu IMC é de ${result}`
     
